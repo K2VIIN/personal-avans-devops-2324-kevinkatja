@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -37,7 +37,7 @@ jobs:
     - run: npm test
     - run: npm run lint
     - name: Jest coverage report
-      uses: ArtiomTr/jest-coverage-report-action@v2.2.6
+      uses: ArtiomTr/jest-coverage-report-action@v2.3.0
       # with:
         # working-directory: ./api
       
