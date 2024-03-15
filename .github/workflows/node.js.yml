@@ -38,7 +38,8 @@ jobs:
     - run: npm run lint
     - name: Jest coverage report
       uses: ArtiomTr/jest-coverage-report-action@v2.3.0
-      # with:
-        # working-directory: ./api
+      with:
+        github_token: ${{ secrets.JEST_GITHUB_TOKEN }}
+        test_script: npm run test -- --coverage
       
       
