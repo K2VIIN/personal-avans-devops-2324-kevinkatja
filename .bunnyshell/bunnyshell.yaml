@@ -1,7 +1,7 @@
 kind: Environment
 name: preview
 type: primary
-urlHandle: a1bbb2
+urlHandle: b6qux3
 components:
   -
     kind: Database
