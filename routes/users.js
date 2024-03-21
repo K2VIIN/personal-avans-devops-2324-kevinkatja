@@ -14,6 +14,12 @@ router.get('/', async function (req, res) {
   }
 });
 
+router.get('/slow', function (req, res) {
+  setTimeout(() => {
+    res.json({ foo: 'bar' });
+  }, 3000);
+});
+
 router.post('/', function(req, res) {
   db.collection('users').insertOne(req.body)
     .then((user) => res.status(201).json({ "id": user.insertedId }))

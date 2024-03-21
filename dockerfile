@@ -14,10 +14,11 @@ RUN npm install
 COPY . .
 
 # Set environment variables
-ENV MONGO_URL=mongodb://mydatabase:27017/
+ENV MONGO_URL=mongodb://root:example@mydatabase:27017/
 
 # Expose the port node.js is going to run on
-EXPOSE 3000
+EXPOSE 5000
 
 # Start command
 CMD npm start
+
