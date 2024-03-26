@@ -1,23 +1,12 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
+
 const { db } = require("../services/database");
 
 /* GET users listing. */
-router.get('/', async function (req, res) {
-  try {
-    let users = await db.collection('users').find().toArray();
-    console.log(users);
-    res.json(users);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({error: 'An error occurred while fetching users'});
-  }
-});
-
-router.get('/slow', function (req, res) {
-  setTimeout(() => {
-    res.json({ foo: 'bar' });
-  }, 3000);
+router.get('/', async function(req, res) {
+  let users = await db.collection('users').find().toArray();
+  res.json(users);
 });
 
 router.post('/', function(req, res) {
