@@ -12,7 +12,7 @@ services:
       - ./data:/data/db
     expose:
       - 27017
-  app: 
+  web: 
     build: 
       context: .
       dockerfile: dockerfile
